@@ -1,6 +1,6 @@
 /*
  *  Angular RangeSlider Directive
- * 
+ *
  *  Version: 0.0.13
  *
  *  Author: Daniel Crisp, danielcrisp.com
@@ -53,7 +53,7 @@
             var eventNamespace = '.rangeSlider',
 
                 defaults = {
-                    disabled: false,
+                    ngrsDisabled: false,
                     orientation: 'horizontal',
                     step: 0,
                     decimalPlaces: 0,
@@ -113,7 +113,7 @@
                 },
 
                 scopeOptions = {
-                    disabled: '=?',
+                    ngrsDisabled: '=?',
                     min: '=',
                     max: '=',
                     modelMin: '=?',
@@ -134,7 +134,7 @@
 
             if (legacySupport) {
                 // make optional properties required
-                scopeOptions.disabled = '=';
+                scopeOptions.ngrsDisabled = '=';
                 scopeOptions.modelMin = '=';
                 scopeOptions.modelMax = '=';
             }
@@ -188,12 +188,12 @@
                      *  FALL BACK TO DEFAULTS FOR SOME ATTRIBUTES
                      */
 
-                    attrs.$observe('disabled', function(val) {
+                    attrs.$observe('ngrsDisabled', function(val) {
                         if (!angular.isDefined(val)) {
-                            scope.disabled = defaults.disabled;
+                            scope.ngrsDisabled = defaults.ngrsDisabled;
                         }
 
-                        scope.$watch('disabled', setDisabledStatus);
+                        scope.$watch('ngrsDisabled', setDisabledStatus);
                     });
 
                     attrs.$observe('orientation', function(val) {
@@ -509,7 +509,7 @@
                             });
 
                             // only do stuff if we are disabled
-                            if (!scope.disabled) {
+                            if (!scope.ngrsDisabled) {
 
                                 // flag as down
                                 down = true;
@@ -642,7 +642,7 @@
                     }
 
                     function throwError(message) {
-                        scope.disabled = true;
+                        scope.ngrsDisabled = true;
                         throw new Error('RangeSlider: ' + message);
                     }
 
