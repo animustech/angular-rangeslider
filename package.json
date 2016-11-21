@@ -1,0 +1,19 @@
+{
+  "name": "angular-rangeslider",
+  "version": "1.0.0",
+  "description": "angular-rangeslider\r ===================\r _Current version: 0.0.14_",
+  "main": "angular.rangeSlider.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gforster1993/angular-rangeslider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gforster1993/angular-rangeslider/issues"
+  },
+  "homepage": "https://github.com/gforster1993/angular-rangeslider#readme"
+}
